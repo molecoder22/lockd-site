@@ -19,26 +19,34 @@
 <body>
 <main>
   <h1>LOCKD</h1>
-  <p class="meta">PRIVACY POLICY · EFFECTIVE 16 SEPTEMBER 2026</p>
+  <p class="meta">PRIVACY POLICY · EFFECTIVE 2 OCTOBER 2026</p>
 
-  <p>LOCKD is a personal accountability app. The short version: <strong>your data stays on your phone.</strong> There is no LOCKD account, no LOCKD server, and nothing in the app sends your habits, journal, plan or scores anywhere. This page spells out the details.</p>
+  <p>LOCKD is a personal accountability app. The short version: <strong>your data lives on your phone.</strong> If you choose to sign in, a backup copy is kept with your LOCKD account so you can restore it on another phone. Without signing in, nothing leaves the device. This page spells out the details.</p>
 
   <h2>What the app stores</h2>
   <p>Everything you enter or the app calculates is stored on your device only, in the app's private storage:</p>
   <ul>
     <li>Your lock (start date and length), habits, things you're cutting out, and the daily ticks.</li>
-    <li>Plan tasks, rep counts, journal and gratitude entries, and daily scores.</li>
+    <li>Plan tasks, rep counts, training sessions and routines, journal and gratitude entries, and daily scores.</li>
+    <li>Food and weight you log, and the height, birth year, sex, activity level and goal you enter so the app can work out a calorie budget.</li>
     <li>Settings, including which notifications you want.</li>
   </ul>
-  <p>The app writes a plain-text backup of this data into its own Documents folder on your phone so you can copy it off with the Files app. It stays on the device unless you move it.</p>
-  <p>If you delete the app, all of this is deleted with it.</p>
+  <p>The app also writes a plain-text copy of this data into its own Documents folder on your phone so you can copy it off with the Files app.</p>
+  <p>If you delete the app, everything on the phone is deleted with it. A cloud backup, if you signed in, stays with your account until you delete the account.</p>
   <!-- Screen Time section returns with 1.1 (see git history, 2026-09-23). -->
 
-  <h2>Apple Health</h2>
-  <p>If you connect Health, LOCKD reads your steps, active energy, exercise minutes, workouts, resting heart rate, weight, and the calories, protein, carbohydrate and fat you've logged, for the current day and the days of your lock, to score your day and to work out your calorie budget. Food and weight you log in LOCKD are written to Health as dietary energy, protein, carbohydrate, fat and body mass so they live in one place. Health data is read on your device, stored only in the app's private storage, and never transmitted. It is never used for advertising or shared with anyone. You can revoke access at any time in iPhone Settings › Health › Data Access & Devices.</p>
+  <h2>Optional account and backup</h2>
+  <p>Signing in is optional. You can sign in with Apple or Google, or skip it and use every feature without an account.</p>
+  <ul>
+    <li><strong>What the account holds:</strong> an account ID and, if Apple or Google share them, your name and email address. With Apple's Hide My Email, we only receive a relay address.</li>
+    <li><strong>What the backup holds:</strong> a copy of everything the app stores (the list above, including food, weight, the body details for your calorie budget, training and journal entries). It's uploaded while you're signed in, a minute or so after each change.</li>
+    <li><strong>Why:</strong> only so you can restore your data on a new phone or after reinstalling. It is not analysed, shared, sold or used for advertising.</li>
+    <li><strong>Where:</strong> with our database provider, Supabase, in the European Union (Frankfurt), encrypted in transit and at rest. Sign-in is handled by Supabase Auth with Apple or Google.</li>
+    <li><strong>How long:</strong> until you delete it. <em>Settings › Account › Delete account</em> in the app deletes the account and its backup from the server permanently. Signing out stops further backups. Data on your phone is not affected by either.</li>
+  </ul>
 
   <h2>Calorie estimates</h2>
-  <p>When you describe food in words, the estimate is produced by Apple's on-device language model on your iPhone. The text does not leave the device. Estimates are approximate; you can change the number before it's logged.</p>
+  <p>When you describe food in words, the estimate is produced by Apple's on-device language model on your iPhone. The text does not leave the device. Estimates are approximate; you can change the number before it's logged. Your calorie budget is worked out on the phone from the details you enter; none of them are sent anywhere.</p>
 
   <h2>Notifications</h2>
   <p>Reminders are local notifications scheduled on your phone by the app. No push server is involved and no notification content leaves the device.</p>
@@ -51,11 +59,13 @@
 
   <h2>What we don't do</h2>
   <ul>
-    <li>No network requests at all. The app never contacts a server.</li>
-    <li>No accounts, no sign-in, no email collection.</li>
+    <li>Without an account, no network requests with your data. The app only asks the App Store about your subscription.</li>
     <li>No analytics, no crash reporting SDKs, no advertising, no tracking of any kind.</li>
-    <li>No selling or sharing of data. There is no data on our side to sell.</li>
+    <li>No selling or sharing of data. The backup exists only to give it back to you.</li>
   </ul>
+
+  <h2>Your rights</h2>
+  <p>Everything LOCKD holds about you is visible in the app, and the plain-text copy in Files is a full export. You can correct anything in the app, sign out to stop backups, and delete your account and its backup at any time in <em>Settings › Account</em>. If you live in the EU, UK or a place with similar laws, you also have the right to ask what we hold, to get a copy, to have it corrected or erased, to object, and to complain to your data protection authority. Write to the address below and we'll answer within 30 days.</p>
 
   <h2>Children</h2>
   <p>LOCKD is not directed at children under 13.</p>
@@ -63,8 +73,8 @@
   <h2>Changes</h2>
   <p>If this policy changes, the new version will be posted at this address with a new effective date.</p>
 
-  <h2>Contact</h2>
-  <p>Questions: see the <a href="support.html">support page</a>.</p>
+  <h2>Who is responsible, and contact</h2>
+  <p>LOCKD is made and published by Mário Otruba, the seller named on the App Store, who is responsible for the data described here. Questions or requests: <a href="mailto:lockd-support@googlegroups.com">lockd-support@googlegroups.com</a>, or the <a href="support.html">support page</a>.</p>
 </main>
 </body>
 </html>
