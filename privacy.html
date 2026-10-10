@@ -19,9 +19,9 @@
 <body>
 <main>
   <h1>LOCKD 1%</h1>
-  <p class="meta">PRIVACY POLICY · EFFECTIVE 2 OCTOBER 2026</p>
+  <p class="meta">PRIVACY POLICY · EFFECTIVE 10 OCTOBER 2026</p>
 
-  <p>LOCKD is a personal accountability app. The short version: <strong>your data lives on your phone.</strong> If you choose to sign in, a backup copy is kept with your LOCKD account so you can restore it on another phone. Without signing in, nothing leaves the device. This page spells out the details.</p>
+  <p>LOCKD is a personal accountability app. The short version: <strong>your data lives on your phone.</strong> If you choose to sign in, a backup copy is kept with your LOCKD account so you can restore it on another phone. Meals, meal photos and task names you send for an AI estimate pass through our server to Anthropic; nothing else leaves the device. This page spells out the details.</p>
 
   <h2>What the app stores</h2>
   <p>Everything you enter or the app calculates is stored on your device only, in the app's private storage:</p>
@@ -45,8 +45,15 @@
     <li><strong>How long:</strong> until you delete it. <em>Settings › Account › Delete account</em> in the app deletes the account and its backup from the server permanently. Signing out stops further backups. Data on your phone is not affected by either.</li>
   </ul>
 
-  <h2>Calorie estimates</h2>
-  <p>When you describe food in words, the estimate is produced by Apple's on-device language model on your iPhone. The text does not leave the device. Estimates are approximate; you can change the number before it's logged. Your calorie budget is worked out on the phone from the details you enter; none of them are sent anywhere.</p>
+  <h2>AI estimates</h2>
+  <p>When you describe a meal in words, photograph a meal, or add a task to your plan, that text or photo is sent through our server to Anthropic's Claude to estimate the calories and macros, or to rate how hard the task is.</p>
+  <ul>
+    <li><strong>What is sent:</strong> only the text or photo needed for that one estimate (plus your goal and habit names when rating a task). No name, email or account details.</li>
+    <li><strong>Who can use it:</strong> our server checks your App Store subscription before passing anything on, and counts how many estimates it used today. It does not store the text or the photo.</li>
+    <li><strong>Anthropic:</strong> processes it under its commercial API terms, does not use it to train its models, and keeps it only for a limited time for safety and abuse monitoring.</li>
+    <li>Estimates are approximate; you can change any number. If the AI can't be reached, Apple's on-device model or your own number is used instead.</li>
+  </ul>
+  <p>Your calorie budget is worked out on the phone from the details you enter; none of them are sent anywhere.</p>
 
   <h2>Notifications</h2>
   <p>Reminders are local notifications scheduled on your phone by the app. No push server is involved and no notification content leaves the device.</p>
@@ -59,7 +66,7 @@
 
   <h2>What we don't do</h2>
   <ul>
-    <li>Without an account, no network requests with your data. The app only asks the App Store about your subscription.</li>
+    <li>Without an account, the only data that leaves the phone is what you send for an AI estimate (see above).</li>
     <li>No analytics, no crash reporting SDKs, no advertising, no tracking of any kind.</li>
     <li>No selling or sharing of data. The backup exists only to give it back to you.</li>
   </ul>
