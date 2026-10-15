@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://molecoder22.github.io/lockd-site/sitemap.xml
