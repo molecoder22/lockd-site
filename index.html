@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo=' 'sha256-mcYxzbhAN2zTdJuXLPmjI9HnTt1PY0A4+Xr1SCCG28w='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>LOCKDMAX · Stop juggling 50 apps. Lock in with one.</title>
 <meta name="description" content="Tasks rated easy to brutal, habits, a gym log that knows your next weight, calories from a photo, quit streaks and a journal. One iPhone app, and every day scored against yesterday.">
 <link rel="canonical" href="https://lockdmax.com/">
@@ -16,10 +18,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 500 900; font-display: swap;
+               src: url(assets/fonts/inter-tight-latin.woff2) format("woff2"); }
   :root {
     color-scheme: dark;
     --bg: #0b0b0d; --panel: #141418; --line: rgba(255,255,255,.08);
