@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lockdmax.com/</loc></url>
+  <url><loc>https://lockdmax.com/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://lockdmax.com/guides/</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://lockdmax.com/support.html</loc></url>
   <url><loc>https://lockdmax.com/privacy.html</loc></url>
+  <url><loc>https://lockdmax.com/guides/lock-in-meaning/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://lockdmax.com/guides/monk-mode/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://lockdmax.com/guides/winter-arc/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://lockdmax.com/guides/winter-arc-checklist/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://lockdmax.com/guides/winter-arc-workout-plan/</loc><lastmod>2026-11-17</lastmod></url>
 </urlset>
