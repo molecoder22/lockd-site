@@ -1,1 +1,427 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=support.html"><title>LOCKD</title></head><body><a href="support.html">LOCKD support</a></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOCKDMAX · Stop juggling 50 apps. Lock in with one.</title>
+<meta name="description" content="Tasks rated easy to brutal, habits, a gym log that knows your next weight, calories from a photo, quit streaks and a journal. One iPhone app, and every day scored against yesterday.">
+<link rel="canonical" href="https://lockdmax.com/">
+<meta name="apple-itunes-app" content="app-id=6817526637">
+<meta name="theme-color" content="#0b0b0d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LOCKDMAX · Stop juggling 50 apps. Lock in with one.">
+<meta property="og:description" content="Tasks, habits, gym, meals, quit streaks and a journal in one app. Every day scored against yesterday.">
+<meta property="og:url" content="https://lockdmax.com/">
+<meta property="og:image" content="https://lockdmax.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/icon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0b0b0d; --panel: #141418; --line: rgba(255,255,255,.08);
+    --text: #f5f5f6; --dim: #a1a1a8; --faint: #66666d; --red: #ff3347;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); overflow-x: hidden;
+         font: 17px/1.55 "Inter Tight", -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  svg { display: block; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .red { color: var(--red); }
+  .center { text-align: center; }
+  .mark { font-weight: 900; letter-spacing: -.6px; text-decoration: none; font-size: 21px; }
+
+  /* header */
+  header { position: fixed; inset: 0 0 auto; z-index: 20; transition: background .3s, border-color .3s;
+           border-bottom: 1px solid transparent; }
+  header.solid { background: rgba(11,11,13,.78); backdrop-filter: saturate(160%) blur(16px);
+                 -webkit-backdrop-filter: saturate(160%) blur(16px); border-color: var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .pill { font-weight: 700; font-size: 14px; text-decoration: none; padding: 9px 18px; border-radius: 99px;
+          background: var(--red); color: #fff; box-shadow: 0 6px 24px rgba(255,51,71,.35); transition: transform .2s; }
+  .pill:hover { transform: translateY(-1px); }
+
+  /* phone frame: real screenshot inside a drawn iPhone */
+  .phone { position: relative; width: 290px; padding: 9px; border-radius: 50px;
+           background: linear-gradient(150deg, #3a3a42, #121215 40%, #2a2a30);
+           box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.14), 0 50px 100px -20px rgba(0,0,0,.8), 0 30px 60px -30px rgba(0,0,0,.9); }
+  .phone img { width: 100%; height: auto; aspect-ratio: 600 / 1304; border-radius: 41px; background: #000; }
+  .phone::after { content: ""; position: absolute; top: 20px; left: 50%; width: 31%; height: 26px;
+                  transform: translateX(-50%); border-radius: 20px; background: #000; }
+
+  h1, h2 { font-weight: 900; letter-spacing: -2.5px; line-height: .95; margin: 0; text-transform: lowercase; }
+  h1 { font-size: clamp(48px, 5.7vw, 86px); }
+  h2 { font-size: clamp(40px, 5vw, 64px); }
+  .kicker { color: var(--red); font-weight: 800; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 16px; }
+  .lede { color: var(--dim); font-size: 19px; max-width: 30em; margin: 26px 0 34px; }
+  .center .lede { margin-left: auto; margin-right: auto; }
+  .badge { display: inline-block; transition: transform .2s; }
+  .badge:hover { transform: translateY(-2px); }
+  .badge img { height: 58px; width: auto; }
+  .note { color: var(--faint); font-size: 13px; margin-top: 14px; }
+
+  /* hero */
+  .hero { position: relative; padding: 130px 0 70px; isolation: isolate; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: -2;
+                  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 28px 28px;
+                  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000, transparent 75%);
+                          mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000, transparent 75%); }
+  .hero::after { content: ""; position: absolute; z-index: -1; width: 900px; height: 900px; right: -200px; top: -120px;
+                 background: radial-gradient(closest-side, rgba(255,51,71,.30), rgba(255,51,71,.08) 55%, transparent); }
+  .hero .wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: 40px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--dim);
+             border: 1px solid var(--line); background: rgba(255,255,255,.03); padding: 6px 14px 6px 10px; border-radius: 99px; margin-bottom: 26px; }
+  .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 12px var(--red); }
+  .fan { position: relative; height: 660px; }
+  .fan .phone { position: absolute; left: 50%; top: 0; }
+  .fan .p1 { width: 296px; transform: translateX(-50%); z-index: 3; }
+  .fan .p2, .fan .p3 { width: 248px; top: 64px; z-index: 1; filter: brightness(.55) saturate(.9); }
+  .fan .p2 { transform: translateX(-96%) rotate(-8deg); }
+  .fan .p3 { transform: translateX(-4%) rotate(8deg); }
+
+  /* stats strip */
+  .strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.015); }
+  .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .strip .wrap > div { padding: 26px 8px; text-align: center; }
+  .strip b { display: block; font-size: 30px; font-weight: 900; letter-spacing: -1px; }
+  .strip span { color: var(--faint); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* the big win: many apps -> one */
+  .win { padding: 130px 0 0; }
+  .swap { display: grid; grid-template-columns: 1fr auto 1fr; gap: 36px; align-items: center; margin-top: 56px; }
+  .apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .app { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 8px 16px;
+         border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.025); color: var(--faint);
+         font-size: 13.5px; font-weight: 600; text-align: center; }
+  .app .ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: #1c1c21; color: #77777e; }
+  .app::after { content: ""; position: absolute; left: 14%; right: 14%; top: 50%; height: 2px; background: var(--red);
+                transform: rotate(-12deg); opacity: .85; border-radius: 2px; }
+  .arrow { color: var(--red); }
+  .one { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .one img { width: 150px; height: 150px; border-radius: 34px;
+             box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 0 80px rgba(255,51,71,.45), 0 30px 60px rgba(0,0,0,.6); }
+  .one b { font-size: 26px; font-weight: 900; letter-spacing: -.8px; }
+  .one > span { color: var(--dim); font-size: 15px; margin-top: -10px; }
+  .wins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 64px; }
+
+  /* cards */
+  .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); border: 1px solid var(--line);
+          border-radius: 22px; padding: 28px; }
+  .card .n { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; margin-bottom: 20px;
+             background: rgba(255,51,71,.12); color: var(--red); font-weight: 900; font-size: 15px; }
+  .card h3 { margin: 0 0 8px; font-size: 22px; font-weight: 800; letter-spacing: -.5px; text-transform: lowercase; }
+  .card p { margin: 0; color: var(--dim); font-size: 16px; }
+
+  /* everything inside */
+  .inside { padding: 130px 0 0; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 48px; }
+  .tile { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: 18px; border: 1px solid var(--line);
+          background: rgba(255,255,255,.025); }
+  .tile .ico { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+               background: rgba(255,51,71,.12); color: var(--red); }
+  .tile b { display: block; font-size: 16px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 2px; }
+  .tile span { color: var(--dim); font-size: 14px; line-height: 1.45; }
+
+  /* feature rows */
+  .feature { padding: 120px 0 0; overflow: hidden; }
+  .feature .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .feature.flip .copy { order: 2; }
+  .copy p:not(.kicker) { color: var(--dim); font-size: 18px; max-width: 27em; margin: 22px 0 0; }
+  .copy ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+  .copy li { display: flex; gap: 10px; color: var(--text); font-size: 16px; font-weight: 600; }
+  .copy li::before { content: ""; flex: 0 0 auto; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%;
+                     background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat; }
+  .stage { position: relative; display: grid; place-items: center; padding: 30px 0; isolation: isolate; }
+  .stage::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; z-index: -1;
+                   background: radial-gradient(closest-side, rgba(255,51,71,.24), transparent); }
+  .stage .phone { width: 300px; }
+
+  /* steps */
+  .steps-sec { padding: 140px 0 0; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+
+  /* final */
+  .cta { position: relative; text-align: center; margin-top: 140px; padding: 110px 0; overflow: hidden; isolation: isolate;
+         border-top: 1px solid var(--line); }
+  .cta::before { content: ""; position: absolute; left: 50%; top: 0; width: 1100px; height: 700px; transform: translate(-50%, -45%); z-index: -1;
+                 background: radial-gradient(closest-side, rgba(255,51,71,.28), transparent); }
+  .cta .icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 30px;
+               box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 20px 60px rgba(255,51,71,.35); }
+  .cta .lede { margin: 22px auto 34px; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 48px; color: var(--faint); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+  footer nav a { color: var(--dim); text-decoration: none; }
+  footer nav a:hover { color: var(--text); }
+  footer .fine { flex-basis: 100%; margin: 0; font-size: 12.5px; }
+
+  /* reveal on scroll */
+  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
+
+  @media (max-width: 1000px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .wrap { padding: 0 16px; }
+    h1, h2 { letter-spacing: -1.5px; }
+    .hero { padding: 108px 0 40px; }
+    .hero .wrap, .feature .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .hero .wrap > div:first-child { text-align: center; }
+    .lede { margin-left: auto; margin-right: auto; }
+    .fan { height: 520px; }
+    .fan .phone.p1 { width: 240px; }
+    .fan .p2, .fan .p3 { width: 200px; top: 56px; }
+    .fan .p2 { transform: translateX(-108%) rotate(-9deg); }
+    .fan .p3 { transform: translateX(8%) rotate(9deg); }
+    .strip .wrap { grid-template-columns: repeat(2, 1fr); }
+    .strip b { font-size: 24px; }
+    .strip span { font-size: 11px; letter-spacing: 1px; }
+    .win, .inside { padding-top: 96px; }
+    .swap { grid-template-columns: 1fr; gap: 24px; }
+    .arrow { transform: rotate(90deg); margin: 0 auto; }
+    .apps { gap: 8px; }
+    .app { font-size: 12px; padding: 14px 4px 12px; }
+    .one img { width: 120px; height: 120px; border-radius: 28px; }
+    .wins, .steps { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+    .feature { padding-top: 88px; }
+    .feature.flip .copy { order: 0; }
+    .copy { text-align: center; }
+    .copy p:not(.kicker) { margin-left: auto; margin-right: auto; }
+    .copy ul { justify-items: center; }
+    .stage .phone { width: 250px; }
+    .stage::before { width: 380px; height: 380px; }
+    .steps-sec { padding-top: 96px; }
+    .cta { margin-top: 96px; padding: 80px 0; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12.5l3 3 5-6"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 9a5 5 0 0 1 8 0l-3 3"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l5 5L8 21H3v-5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-widget" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 16l5-5 3 3 6-7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  </defs>
+</svg>
+
+<header id="hdr">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="LOCKDMAX home">LOCKD<span class="red">MAX</span></a>
+    <a class="pill" href="https://apps.apple.com/app/id6817526637">Get the app</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 1. hook -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><i></i>Now on the App Store</span>
+        <h1>stop juggling 50 apps.<br><span class="red">lock in with one.</span></h1>
+        <p class="lede">Tasks, habits, gym, meals, quit streaks and a journal, in one app. Every day is scored against yesterday, so all that's left is to beat it.</p>
+        <a class="badge" href="https://apps.apple.com/app/id6817526637"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="174" height="58"></a>
+        <p class="note">iPhone · App Store in the US and Canada</p>
+      </div>
+      <div class="fan" aria-hidden="true">
+        <div class="phone p2"><img src="assets/screen-plan.webp" alt="" width="600" height="1304"></div>
+        <div class="phone p3"><img src="assets/screen-fuel.webp" alt="" width="600" height="1304"></div>
+        <div class="phone p1"><img src="assets/screen-today.webp" alt="" width="600" height="1304" fetchpriority="high"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><b>6 → 1</b><span>apps replaced</span></div>
+      <div><b>1 score</b><span>vs yesterday</span></div>
+      <div><b>easy → <em class="red" style="font-style:normal">brutal</em></b><span>every task rated</span></div>
+      <div><b>30–120</b><span>days locked in</span></div>
+    </div>
+  </div>
+
+  <!-- 2. the big win -->
+  <section class="win">
+    <div class="wrap center">
+      <p class="kicker">The big win</p>
+      <h2>your phone is full of apps<br><span class="red">that don't talk to each other.</span></h2>
+      <p class="lede">A to-do list here, a habit tracker there, a gym log, a calorie counter, a quit counter, a journal. Six places to check, six streaks to keep, and none of them tell you if today was better than yesterday.</p>
+      <div class="swap reveal">
+        <div class="apps" aria-label="Apps LOCKDMAX replaces">
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-check"/></svg></span>to-do list</div>
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-repeat"/></svg></span>habit tracker</div>
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-dumbbell"/></svg></span>gym log</div>
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-camera"/></svg></span>calorie counter</div>
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-ban"/></svg></span>quit tracker</div>
+          <div class="app"><span class="ico"><svg width="22" height="22"><use href="#i-pen"/></svg></span>journal</div>
+        </div>
+        <div class="arrow"><svg width="48" height="48"><use href="#i-arrow"/></svg></div>
+        <div class="one">
+          <img src="assets/icon-256.webp" alt="LOCKDMAX app icon" width="150" height="150">
+          <b>LOCKD<span class="red">MAX</span></b>
+          <span>one app · one score · every day</span>
+        </div>
+      </div>
+      <div class="wins" style="text-align:left">
+        <div class="card reveal"><span class="n">1</span><h3>one place every morning</h3><p>Open one app and the whole day is there: what to do, what to lift, what to eat, what to avoid.</p></div>
+        <div class="card reveal"><span class="n">2</span><h3>one score, not six streaks</h3><p>Tasks, habits, calories on target and clean days all count toward one number: how today compares to yesterday.</p></div>
+        <div class="card reveal"><span class="n">3</span><h3>one lock you can't cheat</h3><p>Pick your days once. You can extend the lock, never shorten it. No quitting on a bad Tuesday.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. everything inside -->
+  <section class="inside">
+    <div class="wrap">
+      <p class="kicker">Everything inside</p>
+      <h2>one app.<br><span class="red">all of this.</span></h2>
+      <div class="grid">
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-check"/></svg></span><div><b>Rated tasks</b><span>Every task rated easy to brutal.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-repeat"/></svg></span><div><b>Daily habits</b><span>The things you do every single day.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-dumbbell"/></svg></span><div><b>Workout tracker</b><span>Sets, PRs and your next weight.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-calendar"/></svg></span><div><b>Training calendar</b><span>Your split, planned and ticked.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-camera"/></svg></span><div><b>Meal tracker</b><span>Calories and macros from a photo.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-scale"/></svg></span><div><b>Weight trend</b><span>Smoothed, so water weight doesn't fool you.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-ban"/></svg></span><div><b>Quit streaks</b><span>TikTok, alcohol, sugar, anything.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-chart"/></svg></span><div><b>Score vs yesterday</b><span>Today against yesterday, in percent.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-sun"/></svg></span><div><b>Morning report</b><span>Yesterday, full screen, first thing.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-book"/></svg></span><div><b>Daily reading</b><span>A short reading, no internet needed.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-pen"/></svg></span><div><b>Journal</b><span>Five lines a day. No points, just thinking.</span></div></div>
+        <div class="tile reveal"><span class="ico"><svg width="20" height="20"><use href="#i-widget"/></svg></span><div><b>Home screen widget</b><span>Your lock, without opening the app.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. proof, one by one -->
+  <section class="feature">
+    <div class="wrap">
+      <div class="copy reveal">
+        <p class="kicker">Today</p>
+        <h2>get better<br><span class="red">than yesterday.</span></h2>
+        <p>No leaderboards, no strangers. The only one you compete with is you, yesterday. Every day you show up, your lock grows as a sphere.</p>
+        <ul><li>Today vs yesterday, in percent</li><li>Streaks and red days at a glance</li><li>Morning report of yesterday</li></ul>
+      </div>
+      <div class="stage reveal"><div class="phone"><img src="assets/screen-today.webp" alt="Today screen: day 31 of 90, 40% better than yesterday" width="600" height="1304" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div class="wrap">
+      <div class="copy reveal">
+        <p class="kicker">Tasks</p>
+        <h2>every task<br><span class="red">gets rated.</span></h2>
+        <p>Write what has to happen today. Each task is rated by how hard it is, from easy to brutal, so easy wins can't hide a lazy day.</p>
+        <ul><li>Easy, medium, hard, brutal</li><li>Daily habits next to today's tasks</li><li>Unfinished tasks carry over</li></ul>
+      </div>
+      <div class="stage reveal"><div class="phone"><img src="assets/screen-plan.webp" alt="Plan screen: daily habits and today's tasks rated medium, hard and brutal" width="600" height="1304" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="copy reveal">
+        <p class="kicker">Fitness tracker</p>
+        <h2>it knows your<br><span class="red">next weight.</span></h2>
+        <p>Your split, your sets, your PRs. Start a session and every set is already filled in from last time, moved up when you earned it.</p>
+        <ul><li>Last time's sets, ready to tick</li><li>PRs and estimated 1RM</li><li>Training calendar for your split</li></ul>
+      </div>
+      <div class="stage reveal"><div class="phone"><img src="assets/screen-session.webp" alt="Training session with previous sets, PRs and the next weight" width="600" height="1304" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div class="wrap">
+      <div class="copy reveal">
+        <p class="kicker">Meal tracker</p>
+        <h2>snap your plate.<br><span class="red">macros done.</span></h2>
+        <p>Photograph a meal or write it like you'd say it. Calories and macros are filled in for you. Wrong guess? Change the name and it counts again.</p>
+        <ul><li>Photo or text, no barcode hunting</li><li>Protein, carbs and fat</li><li>Calorie target from your goal</li></ul>
+      </div>
+      <div class="stage reveal"><div class="phone"><img src="assets/screen-fuel.webp" alt="Fuel screen: calories eaten, left and target, with protein, carbs and fat" width="600" height="1304" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="copy reveal">
+        <p class="kicker">Quit tracker</p>
+        <h2>no tiktok.<br><span class="red">9 days clean.</span></h2>
+        <p>Pick what holds you back and tick it off once a day. At 5 pm it asks if you stayed clean. Miss it and the streak shows it.</p>
+        <ul><li>Any habit you want to cut</li><li>Days clean and your best run</li><li>A 5 pm check-in reminder</li></ul>
+      </div>
+      <div class="stage reveal"><div class="phone"><img src="assets/screen-clean.webp" alt="Clean streaks: no TikTok, no alcohol, no sugar" width="600" height="1304" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <!-- 5. how to start -->
+  <section class="steps-sec">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>three steps.<br><span class="red">then show up.</span></h2>
+      <div class="steps">
+        <div class="card reveal"><span class="n">1</span><h3>pick your lock</h3><p>30 to 120 days. Your goal, your daily tasks and what you're cutting out. Takes a couple of minutes.</p></div>
+        <div class="card reveal"><span class="n">2</span><h3>do the work</h3><p>Tick tasks, log training and meals, keep your streaks clean. Everything in one app.</p></div>
+        <div class="card reveal"><span class="n">3</span><h3>beat yesterday</h3><p>Every day gets a score against the one before. Watch the number, and the sphere, grow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. close -->
+  <section class="cta">
+    <div class="wrap">
+      <img class="icon" src="assets/icon-256.webp" alt="" width="96" height="96">
+      <h2>delete five apps.<br><span class="red">keep one.</span></h2>
+      <p class="lede">Lock in for 30 days and see where you are on day 30.</p>
+      <a class="badge" href="https://apps.apple.com/app/id6817526637"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="174" height="58"></a>
+      <p class="note">iPhone · App Store in the US and Canada</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" style="font-size:18px">LOCKD<span class="red">MAX</span></a>
+    <nav aria-label="Legal and help">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+      <a href="mailto:lockd-support@googlegroups.com">Contact</a>
+    </nav>
+    <p class="fine">© 2026 LOCKDMAX. Calorie numbers are estimates, not medical advice. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('solid', scrollY > 10);
+  onScroll(); addEventListener('scroll', onScroll, { passive: true });
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
